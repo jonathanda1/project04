@@ -2,7 +2,7 @@ var _ = require('lodash');
 
 var localEnvVars = {
   TITLE:          'Auth App',
-  SAFE_TITLE:     'auth-app',
+  SAFE_TITLE:     'project04',
   TOKEN_SECRET:   'andafinalsecretsadasitis'
 };
 
