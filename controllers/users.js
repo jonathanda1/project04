@@ -5,6 +5,7 @@ module.exports = {
   me:     me
 };
 
+// Creating user via auth
 function create(req, res, next) {
   if (!req.body.password) {
     return res.status(422).send('Missing required fields');
@@ -30,6 +31,7 @@ function create(req, res, next) {
     });
 };
 
+// Viewing user profile
 function me(req, res, next) {
   User
     .findOne({email: req.decoded.email}).exec()

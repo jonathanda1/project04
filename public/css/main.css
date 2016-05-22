@@ -68,3 +68,7 @@ form {
 #exampleInputEmail1.red-border {
   border: 2px solid red;
 }
+
+#nav-button {
+  margin: 5px;
+}

@@ -22,6 +22,12 @@
       .state("profile", {
         url:         "/profile",
         templateUrl: "/js/profile.html"
+      })
+      .state("mealList", {
+        url:         "/meals/list",
+        templateUrl: "/js/meals/meal-list.html",
+        controller:  "MealListController",
+        controllerAs:"mealListVm"
       });
 
     $urlRouterProvider.otherwise("/");

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-  <title>Auth App</title>
+  <title>Meal Plan</title>
   <meta charset="utf-8">
 
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 
   <!-- If you must use outside libs that aren't Angular-specific, include them BEFORE Angular. -->
-  <script src="/js/jwt-decode.2.0.1.js"></script>
+  <script src="/js/auth/jwt-decode.2.0.1.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
@@ -17,12 +17,15 @@
 </head>
 <body>
   <div class="container-fluid">
+
+  <!-- Navbar -->
     <header ng-controller="NavbarController as vm">
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <a ui-sref="welcome" class="navbar-brand">Home</a>
-          <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
-          <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+          <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" id="nav-button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+          <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" id="nav-button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+          <button ng-show="vm.authService.isLoggedIn()" ui-sref="profile" type="button" id="nav-button" class="btn btn-default navbar-btn navbar-right"><i class="glyphicon glyphicon-user"></i>Profile</button>
         </div>
       </nav>
     </header>
@@ -32,19 +35,25 @@
     </main>
   </div> <!-- div.container-fluid -->
 
+
+
   <footer>
     <hr>
     <span>Made with <i class="glyphicon glyphicon-star"></i> in DTLA.</span>
     <br>
-    <span>© 2015, WDI</span>
+    <span>© 2016, WDI</span>
   </footer>
 
-  <script src="/js/app.module.js"></script>
-  <script src="/js/app.routes.js"></script>
-  <script src="/js/token.service.js"></script>
-  <script src="/js/auth.service.js"></script>
-  <script src="/js/user.service.js"></script>
-  <script src="/js/signin.controller.js"></script>
-  <script src="/js/navbar.controller.js"></script>
+
+
+  <script src="/js/auth/app.module.js"></script>
+  <script src="/js/config/routes.js"></script>
+  <script src="/js/auth/token.service.js"></script>
+  <script src="/js/auth/auth.service.js"></script>
+  <script src="/js/auth/user.service.js"></script>
+  <script src="/js/auth/signin.controller.js"></script>
+  <script src="/js/auth/navbar.controller.js"></script>
+  <script src="/js/meals/MealResource.js"></script>
+  <script src="/js/meals/mealsController.js"></script>
 </body>
 </html>
