@@ -1,0 +1,32 @@
+<div>
+  <h3> Add a meal </h3>
+  <form id='new-meal' ng-submit="mealNewVm.addMeal()">
+    <div>
+      <label for="title">Name: </label>
+      <input type="text" name="title" ng-model="mealNewVm.newMeal.title">
+    </div>
+    <div>
+      <label for="about">Description: </label>
+      <input type="text" name="body" ng-model="mealNewVm.newMeal.body">
+    </div>
+    <div>
+      <label for="about">Calories: </label>
+      <input type="number" name="body" ng-model="mealNewVm.newMeal.cals">
+    </div>
+    <div>
+      <label for="about">Protein: </label>
+      <input type="number" name="body" ng-model="mealNewVm.newMeal.protein">
+    </div>
+    <div>
+      <label for="about">Fats: </label>
+      <input type="number" name="body" ng-model="mealNewVm.newMeal.fats">
+    </div>
+    <div>
+      <label for="about">Carbohydrates: </label>
+      <input type="number" name="body" ng-model="mealNewVm.newMeal.carbs">
+    </div>
+    <input type="submit" value="Add">
+  </form>
+</div>
+
+

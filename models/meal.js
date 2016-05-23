@@ -6,7 +6,8 @@ var mealSchema = mongoose.Schema({
   cals: Number,
   protein: Number,
   fats: Number,
-  carbs: Number
+  carbs: Number,
+  selected: Boolean
 });
 
 var Meal = mongoose.model('Meal', mealSchema)

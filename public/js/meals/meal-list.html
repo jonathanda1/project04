@@ -1,11 +1,15 @@
 Meals to Select From
-
+<br>
+<a ui-sref="mealNew">Add a new meal</a>
 <div ng-repeat="meal in mealListVm.meals">
+<hr>
   <p> {{meal.title}} </p>
   <p> {{meal.body}} </p>
   <p> Calories: {{meal.cals}} </p>
-  <p> Protein: {{meal.protein}} </p>
-  <p> Fats: {{meal.fats}} </p>
-  <p> Carbs: {{meal.carbs}} </p>
+  <a ui-sref="mealShow({id: meal._id})"> Check out this meal </a>
+  <br>
+  <a ng-click="mealListVm.destroy(meal)"> I don't like this meal </a>
   <hr>
 </div>
+
+
