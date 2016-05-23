@@ -7,7 +7,6 @@ var mealSchema = mongoose.Schema({
   protein: Number,
   fats: Number,
   carbs: Number,
-  users: [{type: Number, ref: 'User'}]
 });
 
 var Meal = mongoose.model('Meal', mealSchema)

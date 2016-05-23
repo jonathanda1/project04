@@ -2,8 +2,19 @@ var User = require("../models/user");
 
 module.exports = {
   create: create,
-  me:     me
+  me:     me,
+  show: show
 };
+
+// User has many meals
+function show(req,res,next) {
+User.findOne({_id: req.params.id})
+  .populate('meals')
+  .exec(function(err,user) {
+    if (err) res.json (err)
+      res.json(user)
+  })
+}
 
 // Creating user via auth
 function create(req, res, next) {

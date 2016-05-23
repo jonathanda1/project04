@@ -13,7 +13,7 @@ function MealListController (MealResource, authService) {
   vm.meals = [];
   vm.destroy = destroy;
   vm.authService = authService;
-  console.log("authservice")
+  console.log("authservice", vm.authService.isLoggedIn());
 
   // List all meals
   MealResource.query().$promise.then(function (meals) {
