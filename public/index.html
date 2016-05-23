@@ -24,7 +24,9 @@
         <div class="container">
           <a ui-sref="welcome" class="navbar-brand">Home</a>
           <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" id="nav-button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+          <a ui-sref="signout">
           <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" id="nav-button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+          </a>
           <button ng-show="vm.authService.isLoggedIn()" ui-sref="profile" type="button" id="nav-button" class="btn btn-default navbar-btn navbar-right"><i class="glyphicon glyphicon-user"></i>Profile</button>
         </div>
       </nav>
@@ -46,6 +48,11 @@
 
 
   <script src="/js/auth/app.module.js"></script>
+  <script src="/js/config/app.debug.js"></script>
+  <script src="/js/config/app.httpInterceptors.js"></script>
+  <script src="/js/config/authErrorRedirect.service.js"></script>
+  <script src="/js/config/jsonHeaders.service.js"></script>
+  <script src="/js/config/tokenSigning.service.js"></script>
   <script src="/js/config/routes.js"></script>
   <script src="/js/auth/token.service.js"></script>
   <script src="/js/auth/auth.service.js"></script>
@@ -54,5 +61,8 @@
   <script src="/js/auth/navbar.controller.js"></script>
   <script src="/js/meals/MealResource.js"></script>
   <script src="/js/meals/mealsController.js"></script>
+  <script src="/js/user/usersController.js"></script>
+  <script src="/js/user/UserResource.js"></script>
+
 </body>
 </html>

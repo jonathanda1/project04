@@ -19,9 +19,15 @@
         controller:   "SignInController",
         controllerAs: "vm"
       })
+      .state("signout", {
+        url:          "/",
+        templateUrl:  "/js/welcome.html"
+      })
       .state("profile", {
         url:         "/profile",
-        templateUrl: "/js/profile.html"
+        templateUrl: "/js/user/profile.html",
+        controller:  "UserController",
+        controllerAs:"userVm"
       })
       .state("mealList", {
         url:         "/meals/list",

@@ -41,6 +41,7 @@ var jwt = require('jsonwebtoken');
   *     - The response body contains the token that was generated.
   */
  function create(req, res, next) {
+  console.log("headers", req.headers)
    if (!req.body.email || !req.body.password) {
      var message = 'Missing required fields: email and password';
      return res.status(422).json(message);
@@ -117,11 +118,13 @@ var jwt = require('jsonwebtoken');
    var token;
 
    var header = req.get('Authorization');
+   console.log("header", header)
    if (!header) header = req.get('Authorisation');
 
    if (header) {
      var match = header.match(/(bearer|token) (.*)/i);
      token = match ? match[2] : match;
+     console.log("token", token);
    }
 
    if (!token) {
