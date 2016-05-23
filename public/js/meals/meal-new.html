@@ -1,4 +1,4 @@
-<div>
+<div id="add-meal">
   <h3> Add a meal </h3>
   <form id='new-meal' ng-submit="mealNewVm.addMeal()">
     <div>
@@ -10,19 +10,19 @@
       <input type="text" name="body" ng-model="mealNewVm.newMeal.body">
     </div>
     <div>
-      <label for="about">Calories: </label>
+      <label for="calories">Calories: </label>
       <input type="number" name="body" ng-model="mealNewVm.newMeal.cals">
     </div>
     <div>
-      <label for="about">Protein: </label>
+      <label for="protein">Protein: </label>
       <input type="number" name="body" ng-model="mealNewVm.newMeal.protein">
     </div>
     <div>
-      <label for="about">Fats: </label>
+      <label for="fats">Fats: </label>
       <input type="number" name="body" ng-model="mealNewVm.newMeal.fats">
     </div>
     <div>
-      <label for="about">Carbohydrates: </label>
+      <label for="carbs">Carbohydrates: </label>
       <input type="number" name="body" ng-model="mealNewVm.newMeal.carbs">
     </div>
     <input type="submit" value="Add">

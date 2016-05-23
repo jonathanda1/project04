@@ -4,14 +4,16 @@
     .controller("MealShowController", MealShowController)
     .controller("MealNewController", MealNewController)
 
-MealListController.$inject = ['MealResource'];
+MealListController.$inject = ['MealResource', 'authService'];
 MealShowController.$inject = ['MealResource', '$stateParams'];
 MealNewController.$inject = ['MealResource', '$state'];
 
-function MealListController (MealResource) {
+function MealListController (MealResource, authService) {
   var vm = this;
   vm.meals = [];
   vm.destroy = destroy;
+  vm.authService = authService;
+  console.log("authservice")
 
   // List all meals
   MealResource.query().$promise.then(function (meals) {
