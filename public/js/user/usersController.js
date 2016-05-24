@@ -4,6 +4,7 @@
 
     UserController.$inject = ['UserResource', '$stateParams']
 
+    // Shows User info
     function UserController (UserResource, $stateParams, userService) {
       console.log("UserController loaded")
       var vm = this;
@@ -12,8 +13,6 @@
       UserResource.get({id: $stateParams.id}).$promise.then(function(jsonUser) {
         vm.user = jsonUser;
       });
-
-
   }
 
 

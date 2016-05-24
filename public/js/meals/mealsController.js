@@ -8,6 +8,7 @@ MealListController.$inject = ['MealResource', 'authService'];
 MealShowController.$inject = ['MealResource', '$stateParams'];
 MealNewController.$inject = ['MealResource', '$state'];
 
+// Listing all meals
 function MealListController (MealResource, authService) {
   var vm = this;
   vm.meals = [];
@@ -29,7 +30,7 @@ function MealListController (MealResource, authService) {
   }
 }
 
-
+// Showing an individual meal
   function MealShowController(MealResource, $stateParams) {
     var vm = this;
     vm.meal = {};
@@ -39,6 +40,7 @@ function MealListController (MealResource, authService) {
     });
   }
 
+// Creating a new meal
   function MealNewController(MealResource, $state) {
     var vm = this;
     vm.newMeal = {};

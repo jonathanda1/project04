@@ -10,30 +10,29 @@ module.exports = {
 
 // User has many meals
 function show(req,res,next) {
-User.findById(req.params.id)
+User.findOne({email: req.decoded.email})
   .populate('meals')
   .exec(function(err,user) {
     if (err) res.json (err)
-      res.json(user)
+      res.json({
+        success: true,
+        message: 'Successfully retrieved user data.',
+        data: user
+      })
   })
 }
 
 
 // Updating user to include added meal
 function update(req, res, next) {
-  User.findById(req.params.id).then(function(meal) {
-    meal.save(function(err, savedMeal) {
-      if (err) console.log (err)
-        User.findById(req.user._id, function(err,user) {
-          user.meals.push(savedMeal)
+  User.findOne({email: req.decoded.email}).exec(function(err, user) {
+    user.meals.push(req.params.mealId)
 
           user.save(function(err, savedUser) {
             if (err) console.log (err)
               res.json(savedUser)
           })
         })
-    })
-  })
 }
 
 // function update(req, res, next) {
@@ -76,7 +75,9 @@ function create(req, res, next) {
 // Viewing user profile
 function me(req, res, next) {
   User
-    .findOne({email: req.decoded.email}).exec()
+    .findOne({email: req.decoded.email})
+    .populate('meals')
+    .exec()
     .then(function(user) {
       res.json({
         success: true,
