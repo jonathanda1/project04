@@ -1,32 +1,32 @@
-<div id="add-meal">
+
   <h3> Add a meal </h3>
   <form id='new-meal' ng-submit="mealNewVm.addMeal()">
-    <div>
+    <fieldset class="form-group">
       <label for="title">Name: </label>
       <input type="text" name="title" ng-model="mealNewVm.newMeal.title">
-    </div>
-    <div>
+    </fieldset>
+    <fieldset class="form-group">
       <label for="about">Description: </label>
       <input type="text" name="body" ng-model="mealNewVm.newMeal.body">
-    </div>
-    <div>
+    </fieldset>
+    <fieldset class="form-group">
       <label for="calories">Calories: </label>
       <input type="number" name="body" ng-model="mealNewVm.newMeal.cals">
-    </div>
-    <div>
+    </fieldset>
+    <fieldset class="form-group">
       <label for="protein">Protein: </label>
       <input type="number" name="body" ng-model="mealNewVm.newMeal.protein">
-    </div>
-    <div>
+    </fieldset>
+    <fieldset class="form-group">
       <label for="fats">Fats: </label>
       <input type="number" name="body" ng-model="mealNewVm.newMeal.fats">
-    </div>
-    <div>
+    </fieldset>
+    <fieldset class="form-group">
       <label for="carbs">Carbohydrates: </label>
       <input type="number" name="body" ng-model="mealNewVm.newMeal.carbs">
-    </div>
+    </fieldset>
     <input type="submit" value="Add">
   </form>
-</div>
+
 
 

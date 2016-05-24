@@ -1,8 +1,7 @@
-<div id="welcome">
 <h1>Meal Tracking</h1>
 
   <div style="height: 305px">
-    <uib-carousel active="true" interval="5000" no-wrap="true">
+    <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
       <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
         <img ng-src="{{slide.image}}" style="margin:auto;">
         <div class="carousel-caption">
@@ -14,6 +13,4 @@
   </div>
 
 <a ui-sref="mealList"> View meals to select from </a>
-
-</div>
 

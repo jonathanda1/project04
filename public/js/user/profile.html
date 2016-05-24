@@ -1,7 +1,12 @@
-<h1>User Profile</h1>
-
 <div id="user-profile">
-Name: {{userVm.user.data.name}}
-<br>
-Your meals: {{userVm.user.data.meals}}
+  <h1> {{userVm.user.data.name}}'s Profile </h1>
+  <br>
+    <div ng-repeat="meal in userVm.user.data.meals">
+    Meal:        {{meal.title}} <br>
+    Description: {{meal.body}} <br>
+      Calories:  {{meal.cals}} <br>
+     <button ng-click="userVm.deleteMeal(meal)" type="button" class="btn"><i class="glyphicon glyphicon-minus"></i></button>
+    <hr>
+
+    </div>
 </div>

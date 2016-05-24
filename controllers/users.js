@@ -5,7 +5,8 @@ module.exports = {
   create: create,
   me:     me,
   show: show,
-  update: update
+  update: update,
+  // destroy: destroy
 };
 
 // User has many meals
@@ -35,15 +36,17 @@ function update(req, res, next) {
         })
 }
 
-// function update(req, res, next) {
-//   User.findOneAndUpdate {
-//     {_id: req.params.id},
-//     {$push: {meals: meal}},
-//     {safe: true, upsert: true},
-//     function(err,model){
-//       console.log(err)
-//     }
-//   }
+
+// function destroy(req, res, next) {
+//   User.findOne({email: req.decoded.email}).exec(function(err,user) {
+//     if (err) console.log (err)
+//     user.meals.delete(req.params.mealId)
+
+//     user.save(function(err,savedUser) {
+//       if (err) console.log (err)
+//         res.json(savedUser)
+//     })
+//   })
 // }
 
 // Creating user via auth

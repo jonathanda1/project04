@@ -4,17 +4,18 @@
     .controller("MealShowController", MealShowController)
     .controller("MealNewController", MealNewController)
 
-MealListController.$inject = ['MealResource', 'authService'];
+MealListController.$inject = ['MealResource', 'authService', '$http'];
 MealShowController.$inject = ['MealResource', '$stateParams'];
 MealNewController.$inject = ['MealResource', '$state'];
 
 // Listing all meals
-function MealListController (MealResource, authService) {
+function MealListController (MealResource, authService, $http) {
   var vm = this;
   vm.meals = [];
   vm.destroy = destroy;
   vm.authService = authService;
-  console.log("authservice", vm.authService.isLoggedIn());
+  // console.log("authservice", vm.authService.isLoggedIn());
+  vm.addMealToUser = addMealToUser;
 
   // List all meals
   MealResource.query().$promise.then(function (meals) {
@@ -28,6 +29,18 @@ function MealListController (MealResource, authService) {
       })
     })
   }
+
+    function addMealToUser(meal) {
+    $http
+      .put(`http://localhost:3000/api/users/me/meals/${meal._id}`, meal)
+      .then(function(res) {
+        console.log(res.data);
+      },
+      function(err) {
+        console.log(err)
+      });
+  }
+
 }
 
 // Showing an individual meal
@@ -53,7 +66,6 @@ function MealListController (MealResource, authService) {
       });
     }
   }
-
 
 
 
