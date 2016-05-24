@@ -1,9 +1,11 @@
 var User = require("../models/user");
+var Meal = require("../models/meal");
 
 module.exports = {
   create: create,
   me:     me,
-  show: show
+  show: show,
+  update: update
 };
 
 // User has many meals
@@ -15,6 +17,35 @@ User.findById(req.params.id)
       res.json(user)
   })
 }
+
+
+// Updating user to include added meal
+function update(req, res, next) {
+  User.findById(req.params.id).then(function(meal) {
+    meal.save(function(err, savedMeal) {
+      if (err) console.log (err)
+        User.findById(req.user._id, function(err,user) {
+          user.meals.push(savedMeal)
+
+          user.save(function(err, savedUser) {
+            if (err) console.log (err)
+              res.json(savedUser)
+          })
+        })
+    })
+  })
+}
+
+// function update(req, res, next) {
+//   User.findOneAndUpdate {
+//     {_id: req.params.id},
+//     {$push: {meals: meal}},
+//     {safe: true, upsert: true},
+//     function(err,model){
+//       console.log(err)
+//     }
+//   }
+// }
 
 // Creating user via auth
 function create(req, res, next) {

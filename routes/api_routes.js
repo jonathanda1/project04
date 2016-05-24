@@ -12,6 +12,7 @@ var token = require('../config/token_auth');
 router.post('/users',    usersCtrl.create);
 router.get( '/users/me', token.authenticate, usersCtrl.me);
 router.get('/profile/:id', usersCtrl.show);
+// router.put('/profile/:id', userCtrl.update);
 
 router.post('/token',    token.create);
 
