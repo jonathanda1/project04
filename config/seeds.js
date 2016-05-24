@@ -23,6 +23,22 @@ var meals = [
     }
 ]
 
+var users = [
+    {
+      email: "dog@dog.com",
+      name: "dog",
+      meals: ["573e78eeda864f93dde81d0f", "574353f7d2811e22f9780d76", "574353f7d2811e22f9780d77"]
+    }
+]
+
+  User.create(users, function(err, users) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Database seeded with " + users.length + " users.")
+    }
+  })
+
   Meal.create(meals, function(err, meals) {
     if (err) {
       console.log(err);

@@ -7,8 +7,7 @@
       <h3> {{meal.title}} </h3>
         <p> {{meal.body}} </p>
         <p> Calories: {{meal.cals}} </p>
-        {{}}
-        <a ui-sref="mealShow({id: meal._id})"> Check out this meal </a>
+        <a ui-sref="mealShow({id: meal._id})"> More </a>
     <br>
      <button ng-show="mealListVm.authService.isLoggedIn()" type="button" class="btn">Add</button>
 <!--   <a ng-click="mealListVm.destroy(meal)"> I don't like this meal </a>-->

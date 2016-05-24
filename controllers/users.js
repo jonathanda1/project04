@@ -8,7 +8,7 @@ module.exports = {
 
 // User has many meals
 function show(req,res,next) {
-User.findOne({_id: req.params.id})
+User.findById(req.params.id)
   .populate('meals')
   .exec(function(err,user) {
     if (err) res.json (err)
