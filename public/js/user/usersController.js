@@ -21,7 +21,7 @@
         var id = mealToDelete._id;
         console.log(id)
         $http
-          .delete(`http://localhost:3000/api/users/me/meals/${id}`)
+          .delete(`/api/users/me/meals/${id}`)
           .then(function(res) {
             // console.log(res);
             vm.user.data.meals = vm.user.data.meals.filter(function(meals) {

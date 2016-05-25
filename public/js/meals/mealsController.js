@@ -34,7 +34,7 @@ function MealListController (MealResource, authService, $http) {
   // Taking from meal list and adding meal to user
     function addMealToUser(meal) {
     $http
-      .put(`http://localhost:3000/api/users/me/meals/${meal._id}`, meal)
+      .put(`/api/users/me/meals/${meal._id}`, meal)
       .then(function(res) {
         console.log(res.data);
       },
