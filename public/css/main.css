@@ -68,6 +68,19 @@ form {
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
+  height: 600px;
+  text-align: center;
+}
+
+#welcome-title {
+  text-align: center;
+  vertical-align: middle;
+  /*padding-bottom: 20px;*/
+  font-size: 50px;
+}
+
+.welcome-page {
+  border: 1px solid black;
 }
 
 #meal-list {
@@ -93,6 +106,10 @@ form {
 #add-meal {
   text-align: center;
   padding: 30px;
+}
+
+.content {
+  height: 500px;
 }
 
 

@@ -23,6 +23,7 @@
     <header ng-controller="NavbarController as vm">
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
+        <div class="navbar-brand">MealsFeelz</div>
           <a ui-sref="welcome" class="navbar-brand btn"><i class="glyphicon glyphicon-home"></i></a>
           <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" id="nav-button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
           <a ui-sref="signout">
@@ -36,6 +37,7 @@
     <main class="content" ui-view>
       <!-- ui-router (aka ui.router) inserts templates here -->
     </main>
+
   </div> <!-- div.container-fluid -->
 
 
