@@ -1,5 +1,7 @@
-
+<div id="add-meal">
   <h3> Add a meal </h3>
+  <br>
+  <br>
   <form id='new-meal' ng-submit="mealNewVm.addMeal()">
     <fieldset class="form-group">
       <label for="title">Name: </label>
@@ -25,8 +27,8 @@
       <label for="carbs">Carbohydrates: </label>
       <input type="number" name="body" ng-model="mealNewVm.newMeal.carbs">
     </fieldset>
-    <input type="submit" value="Add">
+    <a ui-sref="mealList"><input type="submit" value="Add"></a>
   </form>
-
+</div>
 
 

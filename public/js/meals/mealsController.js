@@ -22,6 +22,7 @@ function MealListController (MealResource, authService, $http) {
         vm.meals = meals;
       })
 
+  // deleting meal from meal list
   function destroy(mealToDelete) {
     MealResource.delete({id: mealToDelete._id}).$promise.then(function(response) {
       vm.meals = vm.meals.filter(function(meal) {
@@ -30,6 +31,7 @@ function MealListController (MealResource, authService, $http) {
     })
   }
 
+  // Taking from meal list and adding meal to user
     function addMealToUser(meal) {
     $http
       .put(`http://localhost:3000/api/users/me/meals/${meal._id}`, meal)

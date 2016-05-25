@@ -6,7 +6,7 @@ module.exports = {
   me:     me,
   show: show,
   update: update,
-  // destroy: destroy
+  destroy: destroy
 };
 
 // User has many meals
@@ -36,18 +36,19 @@ function update(req, res, next) {
         })
 }
 
+// Deleting individual meal from user.meals
+function destroy(req, res, next) {
+  User.findOne({email: req.decoded.email}).exec(function(err,user) {
+    if (err) console.log (err)
+    var index = user.meals.indexOf(req.params.mealId)
+    user.meals.splice(index,1)
 
-// function destroy(req, res, next) {
-//   User.findOne({email: req.decoded.email}).exec(function(err,user) {
-//     if (err) console.log (err)
-//     user.meals.delete(req.params.mealId)
-
-//     user.save(function(err,savedUser) {
-//       if (err) console.log (err)
-//         res.json(savedUser)
-//     })
-//   })
-// }
+    user.save(function(err,savedUser) {
+      if (err) console.log (err)
+        res.json(savedUser)
+    })
+  })
+}
 
 // Creating user via auth
 function create(req, res, next) {

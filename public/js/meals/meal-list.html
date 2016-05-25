@@ -1,7 +1,7 @@
-<h2>Meals to Select From</h2>
+<h2 id="meal-list-title">Meals to Select From</h2>
 <br>
 <div id="meal-list">
-  <a ui-sref="mealNew">Add a custom meal</a>
+  <a ui-sref="mealNew">Create a custom meal</a>
   <hr>
   <div ng-repeat="meal in mealListVm.meals">
       <h3> {{meal.title}} </h3>
@@ -10,7 +10,7 @@
         <a ui-sref="mealShow({id: meal._id})"> More </a>
     <br>
      <button ng-click="mealListVm.addMealToUser(meal)" ng-show="mealListVm.authService.isLoggedIn()" type="button" class="btn"><i class="glyphicon glyphicon-plus"></i></button>
-   <a ng-click="mealListVm.destroy(meal)"> <i class="glyphicon glyphicon-minus"></i> </a>
+   <button ng-click="mealListVm.destroy(meal)" type="button" class="btn"> <i class="glyphicon glyphicon-minus"></i> </button>
     <hr>
   </div>
 </div>
