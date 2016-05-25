@@ -2,15 +2,15 @@
 <br>
 <div id="meal-list">
   <a ui-sref="mealNew">Add a custom meal</a>
+  <hr>
   <div ng-repeat="meal in mealListVm.meals">
-    <hr>
       <h3> {{meal.title}} </h3>
         <p> {{meal.body}} </p>
         <p> Calories: {{meal.cals}} </p>
         <a ui-sref="mealShow({id: meal._id})"> More </a>
     <br>
      <button ng-click="mealListVm.addMealToUser(meal)" ng-show="mealListVm.authService.isLoggedIn()" type="button" class="btn"><i class="glyphicon glyphicon-plus"></i></button>
-<!--   <a ng-click="mealListVm.destroy(meal)"> I don't like this meal </a>-->
+   <a ng-click="mealListVm.destroy(meal)"> <i class="glyphicon glyphicon-minus"></i> </a>
     <hr>
   </div>
 </div>

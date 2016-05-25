@@ -3,8 +3,8 @@
 
   <div style="height: 305px">
     <uib-carousel active="true" interval="5000" no-wrap="true">
-      <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
+      <uib-slide ng-repeat="slide in welcomeVm" index="slide.id">
+        <img ng-src="" style="margin:auto;">
         <div class="carousel-caption">
           <h4>Slide {{slide.id}}</h4>
           <p>{{slide.text}}</p>
