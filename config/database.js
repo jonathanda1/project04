@@ -15,6 +15,7 @@ if (!env.MLAB_URI) {
 }
 
 if (!mongoose.connection._hasOpened) {
+  console.log("Connecting to " + dbUri)
   mongoose.connect(dbUri);
 }
 
