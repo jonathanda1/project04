@@ -1,7 +1,7 @@
 <h1 id="user-profile-title"> {{userVm.user.data.name}}'s Meals </h1>
 <div id="user-profile">
   <br>
-    <input type="text" ng-model="search" placeholder="Search">
+    Day of the week: <input type="text" ng-model="search" placeholder="Search">
   <br>
   <br>
 
@@ -11,7 +11,7 @@
     Calories:    {{meal.cals}}  <br>
     For:         {{meal.day}}   <br>
 
-     <button ng-click="userVm.deleteMeal(mealToDelete)" type="button" class="btn"><i class="glyphicon glyphicon-minus"></i></button>
+     <button ng-click="userVm.deleteMeal(meal)" type="button" class="btn"><i class="glyphicon glyphicon-minus"></i></button>
     <hr>
     </div>
 

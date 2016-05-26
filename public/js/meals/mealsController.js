@@ -28,6 +28,7 @@ function MealListController (MealResource, authService, $http) {
       vm.meals = vm.meals.filter(function(meal) {
         return meal != mealToDelete
       })
+      console.log(vm.meals)
     })
   }
 

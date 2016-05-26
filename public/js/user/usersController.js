@@ -23,13 +23,16 @@
       function deleteMeal (mealToDelete) {
         console.log(vm.user.data.meals)
         var id = mealToDelete._id;
+        console.log(id)
         $http
           .delete(`/api/users/me/meals/${id}`)
           .then(function(res) {
             // console.log(res);
-            vm.user.data.meals = vm.user.data.meals.filter(function(meals) {
-              return vm.user.data.meals._id != id;
+            vm.user.data.meals = vm.user.data.meals.filter(function(meal) {
+              console.log(meal)
+              return meal._id != id;
             })
+            console.log(vm.user.data.meals)
           },
           function(err) {
             console.log(err)
