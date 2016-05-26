@@ -5,7 +5,6 @@ var logger       = require('morgan');
 var bodyParser   = require('body-parser');
 var cookieParser = require('cookie-parser');
 var debug        = require('debug')('app:http');
-require('dotenv').config();
 
 // Load local libraries.
 var env      = require('./config/environment'),
@@ -14,6 +13,8 @@ var env      = require('./config/environment'),
 
 // Instantiate a server application.
 var app = express();
+
+require('dotenv').load();
 
 // Configure the application (and set it's title!).
 app.set('title', process.env.TITLE);
