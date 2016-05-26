@@ -1,29 +1,49 @@
 <h1 id="user-profile-title"> {{userVm.user.data.name}}'s Meals </h1>
-<div id="user-profile">
+<!-- <div id="user-profile"> -->
+  <div id="user-background">
   <br>
 
-    <div class="week">
-    <h2 ng-show="userVm.search"> {{userVm.search}}'s Totals </h2>
-    <h2 ng-hide="userVm.search">This Week's Total</h2>          <br>
-    Total Calories:      {{userVm.totalCalories() | number:0}}  <br>
-    Total Protein:       {{userVm.totalProtein() | number:0}}   <br>
-    Total Fats:          {{userVm.totalFats() | number:0}}      <br>
-    Total Carbohydrates: {{userVm.totalCarbs() | number:0}}     <br>
+     <div class="totals">
+        <br>
+        <br>
+      <h2 ng-show="userVm.search"> {{userVm.search}}'s Totals </h2>
+      <h2 ng-hide="userVm.search">This Week's Totals</h2>            <br>
+        Total Calories:      {{userVm.totalCalories() | number:0}}  <br>
+        Total Protein:       {{userVm.totalProtein() | number:0}}   <br>
+        Total Fats:          {{userVm.totalFats() | number:0}}      <br>
+        Total Carbohydrates: {{userVm.totalCarbs() | number:0}}     <br>
+        <br>
+        <br>
+        <br>
+     </div>
     </div>
 
     Day of the week: <input type="text" ng-model="userVm.search" placeholder="Search">
 
   <br>
   <br>
-
+  <div class="row">
     <div ng-repeat="meal in userVm.user.data.meals | filter:userVm.search">
-        Meal:        {{meal.title}} <br>
-        Description: {{meal.body}}  <br>
-        Calories:    {{meal.cals}}  <br>
-        For:         {{meal.day}}   <br>
+      <div class="clearfix" ng-if="$index % 3 == 0"></div>
+        <div class="col-lg-4">
+<strong>Meal:</strong>            {{meal.title}} <br>
+<strong>Description:</strong>     {{meal.body}}  <br>
+<strong>Calories:</strong>        {{meal.cals}}  <br>
+<strong>For:</strong>             {{meal.day}}   <br>
         <button ng-click="userVm.deleteMeal(meal)" type="button" class="delete-button btn"><i class="glyphicon glyphicon-minus"></i></button>
-    <hr>
+  <br>
+  <br>
+        </div>
+      </div>
     </div>
+  <!-- </div> -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
 
 </div>
 

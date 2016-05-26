@@ -4,15 +4,25 @@
   <div id="meal-list">
     <a ng-show="mealListVm.authService.isLoggedIn()" ui-sref="mealNew">Create a custom meal</a>
     <hr>
-    <div class="col-lg-3" ng-repeat="meal in mealListVm.meals">
+    <div class="row">
+      <div ng-repeat="meal in mealListVm.meals">
+        <div class="clearfix" ng-if="$index % 3 == 0"></div>
+        <div class="col-lg-4">
         <h3> {{meal.title}} </h3>
           <p> {{meal.body}} </p>
           <p> Calories: {{meal.cals}} </p>
-          <a ui-sref="mealShow({id: meal._id})"> More Info</a>
-    <br>
+          <a ui-sref="mealShow({id: meal._id})"> More Info</a> <br>
           <button ng-click="mealListVm.addMealToUser(meal)" ng-show="mealListVm.authService.isLoggedIn()" type="button" class="add-button btn"><i class="glyphicon glyphicon-plus"></i></button>
-        <!-- <button ng-click="mealListVm.destroy(meal)" type="button" class="btn"> <i class="glyphicon glyphicon-minus"></i> </button> -->
-    <!-- <hr> -->
+          <!--         <button ng-click="mealListVm.destroy(meal)" type="button" class="btn"> <i class="glyphicon glyphicon-minus"></i> </button>
+ -->
+        </div>
+        </div>
+      </div>
+
+
+   <br>
+    <br>
+    <br>
     </div>
   </div>
 </div>

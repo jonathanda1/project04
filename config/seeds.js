@@ -51,22 +51,40 @@ var meals = [
       day: "Friday"
     },
     {
-      title: "Frog & Brocolli",
-      body: "Cooked frog with steamed brocolli and a side of rice",
-      cals: 500,
-      protein: 30,
+      title: "Eggs & Bacon",
+      body: "Scrambled eggs and bacon",
+      cals: 300,
+      protein: 20,
       fats: 15,
-      carbs: 45,
+      carbs: 20,
       day: "Saturday"
     },
     {
-      title: "Frog & Brocolli",
-      body: "Cooked frog with steamed brocolli and a side of rice",
-      cals: 500,
-      protein: 30,
+      title: "Pineapple Fried Rice",
+      body: "Fried rice with Pineapple",
+      cals: 700,
+      protein: 25,
+      fats: 20,
+      carbs: 60,
+      day: "Saturday"
+    },
+    {
+      title: "Eggs & Bacon",
+      body: "Scrambled eggs and bacon",
+      cals: 300,
+      protein: 20,
       fats: 15,
-      carbs: 45,
-      day: "Thursday"
+      carbs: 20,
+      day: "Saturday"
+    },
+    {
+      title: "McDonald's 2 Sausage Egg McMuffins",
+      body: "You have to eat something unhealthy once in a while.",
+      cals: 100,
+      protein: 15,
+      fats: 60,
+      carbs: 90,
+      day: "Sunday"
     },
 ]
 
