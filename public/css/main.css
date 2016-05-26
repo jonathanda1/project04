@@ -30,7 +30,9 @@ a {
 .navbar {
   background-color: #7F9A65;
   font-family: 'Dosis', sans-serif;
+  color: black;
 }
+
 
 .wrapper {
   min-height: 100%;
@@ -117,20 +119,25 @@ form {
   background-color: orange;
 }
 
+.welcome-statement-text {
+  text-align: center;
+}
+
 #welcome-more-info-bg {
   background-color: #99ccff;
 }
 
 #welcome-more-info-title {
   font-family: 'Dosis', sans-serif;
+  font-size: 40px;
   text-align: center;
   border-bottom-color: white;
 }
 
 .welcome-statement {
-  border: 1px solid black;
   margin: 40px;
 }
+
 
 #welcome1 {
   border-right: 1px solid black;
@@ -173,12 +180,17 @@ form {
   padding: 30px;
 }
 
+
 /*sign in/sign up form styling */
 .sign-in-form {
   text-align:center;
 }
 
 .sign-up-form {
+  text-align: center;
+}
+
+.week {
   text-align: center;
 }
 

@@ -2,10 +2,10 @@
     angular.module('app')
         .controller("UserController", UserController)
 
-    UserController.$inject = ['UserResource', '$stateParams','userService','$http']
+    UserController.$inject = ['UserResource', '$stateParams','userService','$http', 'filterFilter']
 
     // Shows User info
-    function UserController (UserResource, $stateParams, userService, $http) {
+    function UserController (UserResource, $stateParams, userService, $http, filterFilter) {
       console.log("UserController loaded")
       var vm = this;
       vm.user = {};
@@ -14,10 +14,15 @@
       vm.totalProtein = totalProtein;
       vm.totalFats = totalFats;
       vm.totalCarbs = totalCarbs;
+      vm.filteredMeals = filteredMeals;
 
       UserResource.get({id: $stateParams.id}).$promise.then(function(jsonUser) {
         vm.user = jsonUser;
       });
+
+    function filteredMeals() {
+      return filterFilter(vm.user.data.meals, vm.search)
+    }
 
     // deleting a meal from a user.meals collection
       function deleteMeal (mealToDelete) {
@@ -45,8 +50,9 @@
         }
 
         var total = 0;
-        for (var i = 0; i < vm.user.data.meals.length; i++){
-          total = total + vm.user.data.meals[i].cals
+        var meals = vm.filteredMeals();
+        for (var i = 0; i < meals.length; i++){
+          total = total + meals[i].cals
         }
         return total;
       }
@@ -56,8 +62,9 @@
           return 0;
         }
         var total = 0;
-        for (var i = 0; i < vm.user.data.meals.length; i++) {
-          total = total + vm.user.data.meals[i].protein
+        var meals = vm.filteredMeals();
+        for (var i = 0; i < meals.length; i++) {
+          total = total + meals[i].protein
         }
         return total;
       }
@@ -67,8 +74,9 @@
           return 0;
         }
         var total = 0;
-        for (var i = 0; i < vm.user.data.meals.length; i++) {
-          total = total + vm.user.data.meals[i].fats
+        var meals = vm.filteredMeals();
+        for (var i = 0; i < meals.length; i++) {
+          total = total + meals[i].fats
         }
         return total;
       }
@@ -78,8 +86,9 @@
           return 0;
         }
         var total = 0;
-        for (var i = 0; i < vm.user.data.meals.length; i++) {
-          total = total + vm.user.data.meals[i].carbs
+        var meals = vm.filteredMeals();
+        for (var i = 0; i < meals.length; i++) {
+          total = total + meals[i].carbs
         }
         return total;
       }

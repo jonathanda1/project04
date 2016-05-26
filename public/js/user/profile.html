@@ -1,25 +1,28 @@
 <h1 id="user-profile-title"> {{userVm.user.data.name}}'s Meals </h1>
 <div id="user-profile">
   <br>
-    Day of the week: <input type="text" ng-model="search" placeholder="Search">
+
+    <div class="week"> <h2>This Week's Total</h2>        <br>
+    Total Calories:      {{userVm.totalCalories() | number:0}}  <br>
+    Total Protein:       {{userVm.totalProtein() | number:0}}   <br>
+    Total Fats:          {{userVm.totalFats() | number:0}}      <br>
+    Total Carbohydrates: {{userVm.totalCarbs() | number:0}}     <br>
+    </div>
+
+
+    Day of the week: <input type="text" ng-model="userVm.search" placeholder="Search">
+
   <br>
   <br>
 
-    <div ng-repeat="meal in userVm.user.data.meals | filter:search">
-    Meal:        {{meal.title}} <br>
-    Description: {{meal.body}}  <br>
-    Calories:    {{meal.cals}}  <br>
-    For:         {{meal.day}}   <br>
-
-     <button ng-click="userVm.deleteMeal(meal)" type="button" class="btn"><i class="glyphicon glyphicon-minus"></i></button>
+    <div ng-repeat="meal in userVm.user.data.meals | filter:userVm.search">
+        Meal:        {{meal.title}} <br>
+        Description: {{meal.body}}  <br>
+        Calories:    {{meal.cals}}  <br>
+        For:         {{meal.day}}   <br>
+        <button ng-click="userVm.deleteMeal(meal)" type="button" class="btn"><i class="glyphicon glyphicon-minus"></i></button>
     <hr>
     </div>
 
-    <div> This Week's Daily Averages                             <br>
-    Total Calories:      {{userVm.totalCalories()/7 | number:0}} <br>
-    Total Protein:       {{userVm.totalProtein()/7 | number:0}}  <br>
-    Total Fats:          {{userVm.totalFats()/7 | number:0}}     <br>
-    Total Carbohydrates: {{userVm.totalCarbs()/7 | number:0}}    <br>
-    </div>
-
 </div>
+

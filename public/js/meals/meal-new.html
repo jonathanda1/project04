@@ -1,9 +1,9 @@
 <div id="add-meal">
-  <h3> Add a meal </h3>
+  <h1> Add a meal </h1>
   <br>
   <br>
 
-  <form id='new-meal' ng-submit="mealNewVm.addMeal()">
+  <form id='new-meal' class="col-lg-6" ng-submit="mealNewVm.addMeal()">
     <fieldset class="form-group">
       <label for="title">Name: </label>
       <input type="text" name="title" ng-model="mealNewVm.newMeal.title">
@@ -43,6 +43,11 @@
     </fieldset>
     <input type="submit" value="Add" class="btn">
   </form>
+
+  <div class="add-meal-image col-lg-6">
+    <img src="http://www.beantownbaker.com/wp-content/uploads/2012/12/winter-kale-salad-4.jpg">
+    Add your own creation
+  </div>
 
 
 
