@@ -5,6 +5,7 @@ var logger       = require('morgan');
 var bodyParser   = require('body-parser');
 var cookieParser = require('cookie-parser');
 var debug        = require('debug')('app:http');
+require('dotenv').config();
 
 // Load local libraries.
 var env      = require('./config/environment'),
