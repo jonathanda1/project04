@@ -9,8 +9,8 @@
         <p> Calories: {{meal.cals}} </p>
         <a ui-sref="mealShow({id: meal._id})"> More </a>
     <br>
-     <button ng-click="mealListVm.addMealToUser(meal)" ng-show="mealListVm.authService.isLoggedIn()" type="button" class="btn"><i class="glyphicon glyphicon-plus"></i></button>
-   <button ng-click="mealListVm.destroy(meal)" type="button" class="btn"> <i class="glyphicon glyphicon-minus"></i> </button>
+        <button ng-click="mealListVm.addMealToUser(meal)" ng-show="mealListVm.authService.isLoggedIn()" type="button" class="btn"><i class="glyphicon glyphicon-plus"></i></button>
+        <button ng-click="mealListVm.destroy(meal)" type="button" class="btn"> <i class="glyphicon glyphicon-minus"></i> </button>
     <hr>
   </div>
 </div>

@@ -62,6 +62,7 @@ function MealListController (MealResource, authService, $http) {
     vm.addMeal = addMeal;
 
     function addMeal() {
+      console.log("clicked")
       MealResource.save(vm.newMeal).$promise.then(function(jsonMeal) {
         vm.newMeal = {};
         $state.go('mealShow', {id: jsonMeal._id});

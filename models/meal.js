@@ -7,6 +7,7 @@ var mealSchema = mongoose.Schema({
   protein: Number,
   fats: Number,
   carbs: Number,
+  day: String
 });
 
 var Meal = mongoose.model('Meal', mealSchema)
