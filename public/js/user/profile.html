@@ -2,13 +2,14 @@
 <div id="user-profile">
   <br>
 
-    <div class="week"> <h2>This Week's Total</h2>        <br>
+    <div class="week">
+    <h2 ng-show="userVm.search"> {{userVm.search}}'s Totals </h2>
+    <h2 ng-hide="userVm.search">This Week's Total</h2>          <br>
     Total Calories:      {{userVm.totalCalories() | number:0}}  <br>
     Total Protein:       {{userVm.totalProtein() | number:0}}   <br>
     Total Fats:          {{userVm.totalFats() | number:0}}      <br>
     Total Carbohydrates: {{userVm.totalCarbs() | number:0}}     <br>
     </div>
-
 
     Day of the week: <input type="text" ng-model="userVm.search" placeholder="Search">
 
