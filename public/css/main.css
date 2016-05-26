@@ -95,9 +95,6 @@ form {
   height: 100px;
 }
 
-.welcome-page {
-  border: 1px solid black;
-}
 
 .welcome-info {
   font-family: 'Dosis', sans-serif;
@@ -113,10 +110,10 @@ form {
 .welcome-more-info {
   font-family: 'Dosis', sans-serif;
   margin: 10px;
-  border: 1px solid black;
   height: 300px;
   width: 100%;
   background-color: orange;
+  font: white;
 }
 
 .welcome-statement-text {
@@ -148,12 +145,18 @@ form {
 }
 
 /*Meal listing page styling*/
+#meal-list-page {
+
+}
+
 #meal-list {
   margin: 25px;
+  padding: 40px;
 }
 
 #meal-list-title {
   padding-top: 30px;
+  text-align:center;
 }
 
 /*Individual Meal information styling*/
@@ -193,6 +196,7 @@ form {
 .week {
   text-align: center;
 }
+
 
 
 

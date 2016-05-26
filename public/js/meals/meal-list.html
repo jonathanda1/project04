@@ -1,17 +1,19 @@
-<h2 id="meal-list-title">Meals to Select From</h2>
-<br>
-<div id="meal-list">
-  <a ng-show="mealListVm.authService.isLoggedIn()" ui-sref="mealNew">Create a custom meal</a>
-  <hr>
-  <div ng-repeat="meal in mealListVm.meals">
-      <h3> {{meal.title}} </h3>
-        <p> {{meal.body}} </p>
-        <p> Calories: {{meal.cals}} </p>
-        <a ui-sref="mealShow({id: meal._id})"> More </a>
-    <br>
-        <button ng-click="mealListVm.addMealToUser(meal)" ng-show="mealListVm.authService.isLoggedIn()" type="button" class="btn"><i class="glyphicon glyphicon-plus"></i></button>
-        <!-- <button ng-click="mealListVm.destroy(meal)" type="button" class="btn"> <i class="glyphicon glyphicon-minus"></i> </button> -->
+<div id=meal-list-page>
+  <h2 id="meal-list-title">Meals to Select From</h2>
+  <br>
+  <div id="meal-list">
+    <a ng-show="mealListVm.authService.isLoggedIn()" ui-sref="mealNew">Create a custom meal</a>
     <hr>
+    <div class="col-lg-3" ng-repeat="meal in mealListVm.meals">
+        <h3> {{meal.title}} </h3>
+          <p> {{meal.body}} </p>
+          <p> Calories: {{meal.cals}} </p>
+          <a ui-sref="mealShow({id: meal._id})"> More Info</a>
+    <br>
+          <button ng-click="mealListVm.addMealToUser(meal)" ng-show="mealListVm.authService.isLoggedIn()" type="button" class="add-button btn"><i class="glyphicon glyphicon-plus"></i></button>
+        <!-- <button ng-click="mealListVm.destroy(meal)" type="button" class="btn"> <i class="glyphicon glyphicon-minus"></i> </button> -->
+    <!-- <hr> -->
+    </div>
   </div>
 </div>
 
