@@ -28,7 +28,7 @@ a {
 }
 
 .navbar {
-  background-color: #7F9A65;
+  background-color: #7F9A65 !important;
   font-family: 'Dosis', sans-serif;
   color: black;
 }
@@ -115,13 +115,17 @@ form {
   width: 100%;
   background-color: orange;
   font: white;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .welcome-statement-text {
+  font-family: 'Dosis', sans-serif;
   text-align: center;
 }
 
 #welcome-more-info-bg {
+  font-family: 'Dosis', sans-serif;
   background-color: #99ccff;
 }
 
@@ -202,6 +206,15 @@ form {
 #user-background {
   background-color: #99ccff;
 }
+
+.your-meals {
+  margin: 65px;
+}
+
+#searchbar {
+  margin: 65px;
+}
+
 
 
 

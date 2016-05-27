@@ -18,10 +18,12 @@
      </div>
     </div>
 
-    Day of the week: <input type="text" ng-model="userVm.search" placeholder="Search">
+    <div id="searchbar">
+        Day of the week: <input type="text" ng-model="userVm.search" placeholder="Search">
+    </div>
 
-  <br>
-  <br>
+
+<div class="your-meals">
   <div class="row">
     <div ng-repeat="meal in userVm.user.data.meals | filter:userVm.search">
       <div class="clearfix" ng-if="$index % 3 == 0"></div>
@@ -36,6 +38,7 @@
         </div>
       </div>
     </div>
+  </div>
   <!-- </div> -->
     <br>
     <br>
