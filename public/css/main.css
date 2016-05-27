@@ -180,6 +180,7 @@ form {
 
 #user-profile-title {
   padding-top: 30px;
+  padding-left: 25px
 }
 
 /*Add meal page styling*/
@@ -214,6 +215,16 @@ form {
 #searchbar {
   margin: 65px;
 }
+
+.panel {
+  border: 1px solid black;
+}
+
+/*.meal-card {
+  height: 200px;
+  border: 1px solid black;
+  display: inline-block;
+}*/
 
 
 
